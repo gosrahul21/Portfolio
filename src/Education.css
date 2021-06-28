@@ -1,0 +1,29 @@
+.education{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding:10px;
+}
+
+.edu-part{
+    padding:30px;
+    display: flex;
+    flex-direction: row;
+    width:60%;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.left-edu-part{
+    width:40%;
+}
+
+.right-edu-part{
+    display:flex;
+    flex:1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

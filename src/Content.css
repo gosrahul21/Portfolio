@@ -1,0 +1,44 @@
+.content{
+    /* flex:1; */
+    margin-left:25vw;
+    padding: 20px;
+  
+   
+}
+
+.gray{
+    background-color: gray;
+    color:white;
+}
+
+.white{
+    background-color: white;
+    color:black;
+}
+
+
+.about{
+    padding:20px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.border{
+    padding:5px;
+    border-radius:10px;
+    border-style: solid;
+    border-color:grey;
+}
+
+.about>p{
+    padding:30px;
+    
+}
+
+.content > .about p:hover{
+    border-color: blueviolet #eee blueviolet #eee;
+}
+

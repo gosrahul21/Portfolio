@@ -1,0 +1,51 @@
+{
+    "name":"Rahul Kumar",
+    "skills":[
+        "c++",
+        "Python",
+        "Node.js",
+        "React.js",
+        "Machine Learning",
+        "HTML",
+        "CSS"
+    ],
+    "education":[
+        {
+            "type":"College",
+            "year":"2017-2021",
+            "name":"Bengal College of Engineering and Technology, Durgapur"
+        },
+        {
+            "type":"High Secondary",
+            "year":"2015-2017",
+            "name":"Tarar College, Bhagalpur"
+        },
+        {
+            "type":"School",
+            "year":"2015",
+            "name":"Arya Bal Shanti Niketan, Munger, Bihar"
+        }
+
+    ],
+    "achievements":[
+        "3 Star Codechef https://www.codechef.com/users/gosrahul21",
+        "4 Star in problem solving skills on Hackerrank",
+        "Secured 8k rank in TCS CodeVita competition among 1.5 lakh participants",
+        "Secured 327 rank in TCS CodeVIta in Second round",
+        "Secured 1728 rank in Google KickStart, Round G, 2020",
+        "Secured Silver (Elite) Medal in Programming in C, NPTEL",
+        "Secured 1st Position at “LDR” competition, Robotics, BCET, Durgapur"
+
+    ],
+    "about":{
+        "name":"Rahul Kumar",
+        "linkedIN":"https://www.linkedin.com/in/rahul-goswami-56800717b/",
+        "github":""
+    }
+
+
+
+
+
+
+}

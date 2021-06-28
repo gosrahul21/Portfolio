@@ -1,0 +1,43 @@
+.navbar{
+    display: flex;
+    position:fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:20vw;
+    margin-left:5vw;
+    background:linear-gradient(to bottom,rgba(233, 146, 16, 0.603),orange);
+}
+
+
+.avatar{
+    width: 55%;
+  height: 25%;
+  border-radius: 50%;
+  border-width: 5px;
+  border-style:solid;
+  border-color: white;
+  object-fit:cover;
+  transition: 1s all;
+}
+
+.avatar:hover{
+    border-color:blueviolet;
+}
+
+.navbar > div{
+    padding:5px;
+    background-color: rgb(132, 33, 224);
+    margin:5px;
+    border-radius: 10%;
+    cursor: pointer;
+    color:white;
+    font-weight: 300;
+    font-size: small;
+    transition: 0.5s all;
+}
+
+.navbar > div:active{
+    background-color: black;
+}

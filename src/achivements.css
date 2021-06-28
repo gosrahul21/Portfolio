@@ -1,0 +1,17 @@
+.achievements{
+    padding:10px;
+    display:flex;
+    margin-top:20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    padding:30px;
+
+}
+
+li{
+    padding:20px;
+}

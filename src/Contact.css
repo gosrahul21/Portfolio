@@ -1,0 +1,12 @@
+.contact{   
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-box{
+    background: linear-gradient(to right,rgba(233, 103, 16, 0.603),rgba(23, 27, 243, 0.521));
+    width: 100%;
+    height: 200px;
+}
