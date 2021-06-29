@@ -1,0 +1,18 @@
+.certifications{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+    margin-top: 20px;
+}
+
+
+.cert-part{
+    padding:30px;
+    display: flex;
+    flex-direction: row;
+    width:80%;
+    align-items: center;
+
+}

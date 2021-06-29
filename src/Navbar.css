@@ -13,7 +13,7 @@
 
 .avatar{
     width: 55%;
-  height: 25%;
+  height: 25%; 
   border-radius: 50%;
   border-width: 5px;
   border-style:solid;
@@ -28,16 +28,26 @@
 
 .navbar > div{
     padding:5px;
-    background-color: rgb(132, 33, 224);
+    /* background-color: rgb(132, 33, 224); */
     margin:5px;
     border-radius: 10%;
     cursor: pointer;
     color:white;
     font-weight: 300;
-    font-size: small;
+    font-size: large;
     transition: 0.5s all;
 }
 
 .navbar > div:active{
     background-color: black;
+}
+
+ a{
+    text-decoration: none;
+    outline: none;
+
+}
+
+.icon{
+    font-size: large;
 }

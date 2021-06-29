@@ -1,11 +1,18 @@
 import React from 'react'
 import './achivements.css'
+import {achievements}  from './db.json'
 function Achievements() {
+
+    const renderAchievements = () => {
+        return achievements.map((ach) => <li>{ach}</li>);
+        
+    }
+
     return (
         <div className='achievements border'>
             <h1>Achievements</h1>
             <ul>
-                <li>
+                {/* <li>
                 3 Star Codechef https://www.codechef.com/users/gosrahul21
                 </li>
                 <li>
@@ -30,7 +37,8 @@ C, NPTEL
                 <li>
                Secured 1st Position at “LDR” competition,
 Robotics, BCET, Durgapur
-                </li>
+                </li> */}
+                {renderAchievements()}
 
             </ul>
 

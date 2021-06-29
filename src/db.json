@@ -11,7 +11,7 @@
     ],
     "education":[
         {
-            "type":"College",
+            "type":"Bachelor Of Technology",
             "year":"2017-2021",
             "name":"Bengal College of Engineering and Technology, Durgapur"
         },
@@ -37,11 +37,62 @@
         "Secured 1st Position at “LDR” competition, Robotics, BCET, Durgapur"
 
     ],
-    "about":{
-        "name":"Rahul Kumar",
-        "linkedIN":"https://www.linkedin.com/in/rahul-goswami-56800717b/",
-        "github":""
-    }
+    "projects":[
+        {
+            "name":"DevConnect",
+            "details":["Ecommerce web application with firebase authentication, Admin Panel, star rating system, card payment, generating Invoice etc.",
+            " Tool used: Node.js, react.js, mongodb, redux, react-hooks, HTML& CSS."
+            ]
+            
+        },
+        {
+            "name":"Ecommerce",
+            "details":[
+                "DevConnect (05/2020 - Present) Social Site for developers where developer can connect with each other and do post, comment, like etc.",
+                "Tool used: Node.js, react.js, mongodb, react-hooks, redux, HTML& CSS."
+            ]
+        }
+        
+
+    ],
+    "linkedIN":"https://www.linkedin.com/in/rahul-goswami-56800717b/",
+    "github":"https://github.com/gosrahul21",
+    "facebook":"https://www.facebook.com/rahul.rinki.94/",
+    "insta":"",
+    "email":"gosrahul21@gmail.com",
+    "experience":[
+        {
+            "type":"Internship",
+            "name":"Ardent Computech Pvt LTD",
+            "role":"Full Stack Developer",
+            "date":"15 june 2020 -15 august 2020"
+        }
+    ],
+    "certifications":[
+        {
+            "name":"Machine learning using python",
+            "from":"Indian Cyber Security Solutions, Kolkata" ,
+            "date": "07/2019 - 08/2019"
+        },
+        {
+            "name":"MERN stack Training",
+            "from": "Ardent Computech PVT LTD",
+            "date":"15 june 2020 -15 august 2020"
+        },
+        {
+            "name":"CORE JAVA",
+            "from":"MSME TOOL ROOM ,Kolkata",
+            "date":"01/2019"
+
+        },
+        {
+            "name":"Machine Learning and Deep learning masters",
+            "from":"INeuron",
+            "date":"15/04/2021"
+        }
+    ]
+
+ 
 
 
 

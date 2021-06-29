@@ -5,6 +5,8 @@ import Skills from './Skills'
 import Projects from './Projects'
 import Achievements from './Achievements'
 import Education from './Education'
+import Certification from './Certifications'
+import Experience from './Experience'
 function Content() {
 
     
@@ -18,14 +20,13 @@ function Content() {
 
     return (
         <div className={`content ${theme}`}>
-            <input type="submit" onClick={onClickHandler} value="change theme"/>
+            {/* <label>Change Theme</label><input type="submit" className={`btn ${theme==="white"?"gray":"white"}`}onClick={onClickHandler} value=""/> */}
             {/* //About me */}
             <div   className="about border">
                 <h1>About</h1>
                 <p>
-                Hi There! I'm Rahul Kumar From Sahibganj, Jharkhand. I Currently Work As A Software Engineer At Innolabz Ventures. I Have Experience Programming In Many Different Languages Such As Java, Python, However Some Of My Projects Involve Working In Machine Learning.
-
-                I Am Pursuing B.Tech From Bengal College Of Engineering And Technology, Durgapur With An Aggregate Of 8 CGPA In Information Technology.
+                Hi There! I'm Rahul Kumar From Sahibganj, Jharkhand. I Am Pursuing B.Tech From Bengal College Of Engineering And Technology, Durgapur With An Aggregate Of 8 CGPA In Information Technology.
+                
                 </p>
             </div>
            
@@ -39,6 +40,8 @@ function Content() {
             <Achievements/>
             {/* Education */}
             <Education/>
+            <Experience/>
+            <Certification/>
             {/* contact */}
         </div>
     )
