@@ -3,7 +3,7 @@ import './Skills.css'
 import {skills} from './db.json'
 const Skills=() => {
     return (
-        <div className="skills border">
+        <div id="skills" className="skills border">
             <h1> Skills</h1>
             {/* button for skills */}
             <div className="skill-list">

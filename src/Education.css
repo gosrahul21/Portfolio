@@ -23,7 +23,7 @@
 .right-edu-part{
     display:flex;
     flex:1;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }

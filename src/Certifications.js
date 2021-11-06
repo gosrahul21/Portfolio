@@ -4,11 +4,11 @@ import {certifications} from './db.json'
 const Certification = () =>{
 
     return (
-        <div className="certifications border">
+        <div id="cert" className="certifications border">
             <h1>Certifications</h1>
             {/* //certificate */}
             {/* link */}
-            {certifications.map(({name,from,date})=>(
+            {certifications.map(({name,from,date,link="#"})=>(
                     <div className="cert-part">
                     <div className="left-edu-part">
                         <h3>{from}</h3>
@@ -16,6 +16,7 @@ const Certification = () =>{
                     </div>
                     <div className="right-edu-part">
                         <p>{name}</p>
+                        <span><a  className="ref-link" href={link}>Certificate Link</a></span>
                     </div>
                 </div>
                 ))}

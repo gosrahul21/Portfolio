@@ -16,3 +16,16 @@
     align-items: center;
 
 }
+
+.ref-link{
+    font-size:small;
+    font-weight: 600;
+    color:gray;
+    display: block;
+    
+}
+
+.ref-link:hover{
+    color:purple;
+    
+}

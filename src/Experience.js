@@ -2,7 +2,7 @@ import React from 'react'
 import {experience} from './db.json'
 function Experience() {
     return (
-        <div className="education border">
+        <div id="experience" className="education border">
             <h1>Experience</h1>
         {experience.map(({name,type,role,date})=>(
                 <div className="edu-part">

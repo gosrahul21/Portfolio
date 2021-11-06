@@ -3,7 +3,7 @@ import './Education.css'
 import {education} from './db.json'
 function Education() {
     return (
-        <div className="education border">
+        <div id ="education" className="education border">
             <h1>Education</h1>
             
             {

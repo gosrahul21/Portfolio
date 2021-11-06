@@ -31,7 +31,8 @@
     border-radius:10px;
     border-style: solid;
     border-color:grey;
-    background-color: #eee;
+    /* border-color:rgb(159, 113, 202); */
+    background-color: white;
 }
 .btn{
     

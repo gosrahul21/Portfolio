@@ -22,10 +22,10 @@ function Content() {
         <div className={`content ${theme}`}>
             {/* <label>Change Theme</label><input type="submit" className={`btn ${theme==="white"?"gray":"white"}`}onClick={onClickHandler} value=""/> */}
             {/* //About me */}
-            <div   className="about border">
+            <div id="about"  className="about border">
                 <h1>About</h1>
                 <p>
-                Hi There! I'm Rahul Kumar From Sahibganj, Jharkhand. I Am Pursuing B.Tech From Bengal College Of Engineering And Technology, Durgapur With An Aggregate Of 8 CGPA In Information Technology.
+                Hi There! I'm Rahul Kumar From Sahibganj, Jharkhand. I Am Pursuing B.Tech From Bengal College Of Engineering And Technology, Durgapur With An Aggregate Of 8.63 CGPA In Information Technology.
                 
                 </p>
             </div>
