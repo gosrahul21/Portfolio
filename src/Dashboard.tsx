@@ -27,7 +27,8 @@ export default function CoolestPortfolio() {
   });
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [searchText, setSearchText] = useState("");
-  
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   const heroRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,19 @@ export default function CoolestPortfolio() {
     );
 
     return () => observer.disconnect();
+  }, []);
+
+  // Track overall page scroll for planets parallax (0..1)
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      const p = total > 0 ? window.scrollY / total : 0;
+      setScrollProgress(Math.max(0, Math.min(1, p)));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const projects: Project[] = [
@@ -135,8 +149,10 @@ export default function CoolestPortfolio() {
 
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
-      const matchesTags = activeTags.length === 0 || activeTags.every((t) => p.tech.includes(t));
-      const matchesSearch = searchText.trim().length === 0 ||
+      const matchesTags =
+        activeTags.length === 0 || activeTags.every((t) => p.tech.includes(t));
+      const matchesSearch =
+        searchText.trim().length === 0 ||
         p.title.toLowerCase().includes(searchText.toLowerCase()) ||
         p.description.toLowerCase().includes(searchText.toLowerCase()) ||
         p.tech.join(" ").toLowerCase().includes(searchText.toLowerCase());
@@ -169,24 +185,32 @@ export default function CoolestPortfolio() {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <MagneticCursor />
       <AnimatedBackground />
-      
-      <Navigation 
+
+      <Navigation
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
+      <div className="h-20" />
 
-      <HeroSection heroRef={heroRef} threeEnabled={threeEnabled} motionIntensity={motionIntensity} />
+      <HeroSection
+        heroRef={heroRef}
+        threeEnabled={threeEnabled}
+        motionIntensity={motionIntensity}
+      />
 
       <SkillsSection skills={skills} />
 
       <ProjectsFilter
         allTags={allTags}
-        onFilterChange={(tags, search) => { setActiveTags(tags); setSearchText(search); }}
+        onFilterChange={(tags, search) => {
+          setActiveTags(tags);
+          setSearchText(search);
+        }}
       />
 
-      <ProjectsSection 
+      <ProjectsSection
         projects={filteredProjects}
         projectsRef={projectsRef}
         onProjectHover={handleProjectHover}
