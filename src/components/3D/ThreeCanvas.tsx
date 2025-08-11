@@ -3,7 +3,13 @@ import { OrbitControls } from "@react-three/drei";
 import FloatingIcons from "./FloatingIcons";
 import ParticleSystem from "./ParticleSystem";
 
-export default function ThreeCanvas({ enabled = true, intensity = 1 }: { enabled?: boolean; intensity?: number }) {
+export default function ThreeCanvas({
+  enabled = true,
+  intensity = 1,
+}: {
+  enabled?: boolean;
+  intensity?: number;
+}) {
   if (!enabled) return null;
   return (
     <div className="absolute inset-0 -z-10">

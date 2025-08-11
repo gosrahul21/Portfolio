@@ -1,16 +1,21 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 interface ProjectsFilterProps {
   allTags: string[];
   onFilterChange: (activeTags: string[], search: string) => void;
 }
 
-export default function ProjectsFilter({ allTags, onFilterChange }: ProjectsFilterProps) {
+export default function ProjectsFilter({
+  allTags,
+  onFilterChange,
+}: ProjectsFilterProps) {
   const [active, setActive] = useState<string[]>([]);
   const [search, setSearch] = useState("");
 
   const toggle = (tag: string) => {
-    const next = active.includes(tag) ? active.filter(t => t !== tag) : [...active, tag];
+    const next = active.includes(tag)
+      ? active.filter((t) => t !== tag)
+      : [...active, tag];
     setActive(next);
     onFilterChange(next, search);
   };
@@ -36,8 +41,8 @@ export default function ProjectsFilter({ allTags, onFilterChange }: ProjectsFilt
               onClick={() => toggle(t)}
               className={`px-3 py-1 rounded-full text-xs border transition ${
                 active.includes(t)
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white border-transparent'
-                  : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10'
+                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white border-transparent"
+                  : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"
               }`}
             >
               {t}

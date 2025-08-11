@@ -21,9 +21,10 @@ export default function ParticleSystem() {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    if (particles.current) {
-      (particles.current as any).rotation.y = t * 0.1;
-      (particles.current as any).rotation.x = t * 0.05;
+    const p = particles.current;
+    if (p) {
+      p.rotation.y = t * 0.1;
+      p.rotation.x = t * 0.05;
     }
   });
 

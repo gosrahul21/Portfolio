@@ -7,14 +7,22 @@ interface ThemeControlsProps {
   setMotionIntensity: (v: number) => void;
 }
 
-export default function ThemeControls({ threeEnabled, setThreeEnabled, motionIntensity, setMotionIntensity }: ThemeControlsProps) {
+export default function ThemeControls({
+  threeEnabled,
+  setThreeEnabled,
+  motionIntensity,
+  setMotionIntensity,
+}: ThemeControlsProps) {
   const [primaryHue, setPrimaryHue] = useState<number>(() => {
     const saved = localStorage.getItem("theme.primaryHue");
     return saved ? Number(saved) : 220; // default blue-ish
   });
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--primary-hue", String(primaryHue));
+    document.documentElement.style.setProperty(
+      "--primary-hue",
+      String(primaryHue)
+    );
     localStorage.setItem("theme.primaryHue", String(primaryHue));
   }, [primaryHue]);
 

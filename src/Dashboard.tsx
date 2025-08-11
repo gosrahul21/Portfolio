@@ -14,9 +14,9 @@ import type { Project, Skill } from "./types";
 
 export default function CoolestPortfolio() {
   const [darkMode, setDarkMode] = useState(true);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [_hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [_cursorText, setCursorText] = useState("");
   const [activeSection, setActiveSection] = useState("hero");
-  const [cursorText, setCursorText] = useState("");
   const [threeEnabled, setThreeEnabled] = useState<boolean>(() => {
     const saved = localStorage.getItem("theme.threeEnabled");
     return saved ? JSON.parse(saved) : true;
@@ -166,11 +166,7 @@ export default function CoolestPortfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden" style={{
-      // apply primary hue theme
-      // @ts-ignore: CSS var
-      '--tw-gradient-from': `hsl(${Number(localStorage.getItem('theme.primaryHue')||220)} 92% 60%)`,
-    }}>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <MagneticCursor />
       <AnimatedBackground />
       
