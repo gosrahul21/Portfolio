@@ -43,6 +43,8 @@ export default function CoolestPortfolio() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
+    // Store theme preference in localStorage
+    localStorage.setItem("theme.darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
   // Intersection Observer for active section
@@ -86,7 +88,11 @@ export default function CoolestPortfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      darkMode 
+        ? 'bg-black text-white' 
+        : 'bg-gray-50 text-gray-900'
+    } overflow-x-hidden`}>
       <MagneticCursor />
       <AnimatedBackground />
 
@@ -102,9 +108,10 @@ export default function CoolestPortfolio() {
         heroRef={heroRef}
         threeEnabled={threeEnabled}
         motionIntensity={motionIntensity}
+        darkMode={darkMode}
       />
 
-      <SkillsSection skills={portfolioData.skills.list} />
+      <SkillsSection skills={portfolioData.skills.list} darkMode={darkMode} />
 
       <ProjectsFilter
         allTags={allTags}
@@ -112,6 +119,7 @@ export default function CoolestPortfolio() {
           setActiveTags(tags);
           setSearchText(search);
         }}
+        darkMode={darkMode}
       />
 
       <ProjectsSection
@@ -119,16 +127,17 @@ export default function CoolestPortfolio() {
         projectsRef={projectsRef}
         onProjectHover={handleProjectHover}
         onProjectLeave={handleProjectLeave}
+        darkMode={darkMode}
       />
 
-      <CalendlySection />
+      <CalendlySection darkMode={darkMode} />
 
-      <ContactSection contactRef={contactRef} />
+      <ContactSection contactRef={contactRef} darkMode={darkMode} />
 
-      <Footer />
+      <Footer darkMode={darkMode} />
 
       {/* Music Player */}
-      <MusicPlayer isVisible={true} />
+      <MusicPlayer isVisible={true} darkMode={darkMode} />
     </div>
   );
 }

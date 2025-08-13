@@ -17,6 +17,7 @@ interface ProjectsSectionProps {
   projectsRef: React.RefObject<HTMLDivElement | null>;
   onProjectHover: (index: number) => void;
   onProjectLeave: () => void;
+  darkMode: boolean;
 }
 
 export default function ProjectsSection({
@@ -24,6 +25,7 @@ export default function ProjectsSection({
   projectsRef,
   onProjectHover,
   onProjectLeave,
+  darkMode,
 }: ProjectsSectionProps) {
   // Get projects section data from centralized source
   const projectsData = getProjectsSection();
@@ -35,7 +37,11 @@ export default function ProjectsSection({
       className="py-16 md:py-20 px-4 md:px-8 relative"
     >
       {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 pointer-events-none" />
+      <div className={`absolute inset-0 pointer-events-none transition-colors duration-300 ${
+        darkMode 
+          ? "bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5" 
+          : "bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10"
+      }`} />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -48,7 +54,9 @@ export default function ProjectsSection({
           <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             {projectsData.title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4 leading-relaxed">
+          <p className={`text-lg md:text-xl max-w-2xl mx-auto px-4 leading-relaxed transition-colors duration-300 ${
+            darkMode ? "text-gray-300" : "text-gray-600"
+          }`}>
             {projectsData.subtitle}
           </p>
         </motion.div>
@@ -75,6 +83,7 @@ export default function ProjectsSection({
                 index={idx}
                 onHover={onProjectHover}
                 onLeave={onProjectLeave}
+                darkMode={darkMode}
               />
             </motion.div>
           ))}

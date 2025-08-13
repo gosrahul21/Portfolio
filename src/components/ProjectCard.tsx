@@ -17,6 +17,7 @@ interface ProjectCardProps {
   index: number;
   onHover: (index: number) => void;
   onLeave: () => void;
+  darkMode: boolean;
 }
 
 export default function ProjectCard({
@@ -24,6 +25,7 @@ export default function ProjectCard({
   index,
   onHover,
   onLeave,
+  darkMode,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -45,14 +47,18 @@ export default function ProjectCard({
       <Tilt
         glareEnable={true}
         glareMaxOpacity={0.3}
-        glareColor="#ffffff"
+        glareColor={darkMode ? "#ffffff" : "#000000"}
         glarePosition="bottom"
         perspective={1000}
         scale={1.02}
         transitionSpeed={800}
         tiltMaxAngleX={10}
         tiltMaxAngleY={10}
-        className="rounded-2xl md:rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-lg hover:shadow-purple-500/20"
+        className={`rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-lg ${
+          darkMode 
+            ? "bg-white/5 border border-white/10 hover:border-white/20 hover:shadow-purple-500/20" 
+            : "bg-white/80 border border-gray-200 hover:border-gray-300 hover:shadow-gray-500/20"
+        }`}
       >
         <div className="relative h-64 md:h-80">
           <motion.img
@@ -88,13 +94,19 @@ export default function ProjectCard({
             </motion.div>
           )}
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className={`absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+            darkMode 
+              ? "from-black/80 via-black/20 to-transparent" 
+              : "from-gray-900/80 via-gray-900/20 to-transparent"
+          }`} />
 
           <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3">
               {project.title}
             </h3>
-            <p className="text-gray-300 mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">
+            <p className={`mb-3 md:mb-4 text-xs md:text-sm leading-relaxed transition-colors duration-300 ${
+              darkMode ? "text-gray-300" : "text-gray-200"
+            }`}>
               {project.description}
             </p>
 

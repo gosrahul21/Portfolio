@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface MusicPlayerProps {
   isVisible: boolean;
+  darkMode: boolean;
 }
 
-export default function MusicPlayer({ isVisible }: MusicPlayerProps) {
+export default function MusicPlayer({ isVisible, darkMode }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(0.3);
   const [currentTime, setCurrentTime] = useState(0);

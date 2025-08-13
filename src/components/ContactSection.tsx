@@ -5,9 +5,10 @@ import { getContactSection } from "../utils/portfolio-data";
 
 interface ContactSectionProps {
   contactRef: React.RefObject<HTMLDivElement | null>;
+  darkMode: boolean;
 }
 
-export default function ContactSection({ contactRef }: ContactSectionProps) {
+export default function ContactSection({ contactRef, darkMode }: ContactSectionProps) {
   // Get contact section data from centralized source
   const contactData = getContactSection();
 
@@ -34,7 +35,9 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
           <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             {contactData.title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
+          <p className={`text-lg md:text-xl max-w-2xl mx-auto px-4 transition-colors duration-300 ${
+            darkMode ? "text-gray-300" : "text-gray-600"
+          }`}>
             {contactData.subtitle}
           </p>
 
@@ -55,7 +58,11 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
               href={contactData.ctaButtons.secondary.url || '#'}
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 border-white/20 rounded-full text-white font-semibold text-base md:text-lg flex items-center justify-center gap-2 md:gap-3 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+              className={`w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 rounded-full font-semibold text-base md:text-lg flex items-center justify-center gap-2 md:gap-3 transition-all duration-300 ${
+                darkMode 
+                  ? "border-white/20 hover:bg-white/10 hover:border-white/40 text-white" 
+                  : "border-gray-300 hover:bg-gray-100 hover:border-gray-400 text-gray-700"
+              }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -76,14 +83,22 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-full hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 group"
+                  className={`p-3 md:p-4 backdrop-blur-sm rounded-full border transition-all duration-300 group ${
+                    darkMode 
+                      ? "bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20" 
+                      : "bg-gray-100/80 hover:bg-gray-200/80 border-gray-200 hover:border-gray-300"
+                  }`}
                   whileHover={{ scale: 1.1, y: -3 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  {IconComponent && <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-blue-400 transition-colors" />}
+                  {IconComponent && <IconComponent className={`w-5 h-5 md:w-6 md:h-6 transition-colors ${
+                    darkMode 
+                      ? "text-white group-hover:text-blue-400" 
+                      : "text-gray-700 group-hover:text-blue-600"
+                  }`} />}
                 </motion.a>
               );
             })}

@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, Download } from "lucide-react";
 import ThreeCanvas from "./3D/ThreeCanvas";
@@ -7,12 +8,14 @@ interface HeroSectionProps {
   heroRef: React.RefObject<HTMLDivElement | null>;
   threeEnabled?: boolean;
   motionIntensity?: number;
+  darkMode: boolean;
 }
 
 export default function HeroSection({
   heroRef,
   threeEnabled = true,
   motionIntensity = 1,
+  darkMode,
 }: HeroSectionProps) {
   // Get hero section data from centralized source
   const heroData = getHeroSection();
@@ -50,7 +53,7 @@ export default function HeroSection({
               {heroData.mainHeading.line1}
             </span>
             <br />
-            <span className={heroData.gradients.line2}>
+            <span className={darkMode ? "text-white" : "text-gray-900"}>
               {heroData.mainHeading.line2}
             </span>
             <br />
@@ -60,7 +63,9 @@ export default function HeroSection({
           </motion.h1>
 
           <motion.p
-            className="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed px-4"
+            className={`max-w-3xl mx-auto text-lg md:text-xl leading-relaxed px-4 transition-colors duration-300 ${
+              darkMode ? "text-gray-300" : "text-gray-600"
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -98,7 +103,11 @@ export default function HeroSection({
                   window.open(heroData.ctaButtons.secondary.url, '_blank');
                 }
               }}
-              className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 border-white/20 rounded-full text-white font-semibold text-base md:text-lg flex items-center justify-center gap-3 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+              className={`w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 rounded-full font-semibold text-base md:text-lg flex items-center justify-center gap-3 transition-all duration-300 ${
+                darkMode 
+                  ? "border-white/20 hover:bg-white/10 hover:border-white/40 text-white" 
+                  : "border-gray-300 hover:bg-gray-100 hover:border-gray-400 text-gray-700"
+              }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -119,7 +128,11 @@ export default function HeroSection({
                 <div className="text-2xl md:text-3xl font-bold text-blue-400">
                   {stat.number}
                 </div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className={`text-sm transition-colors duration-300 ${
+                  darkMode ? "text-gray-400" : "text-gray-500"
+                }`}>
+                  {stat.label}
+                </div>
               </div>
             ))}
           </motion.div>
