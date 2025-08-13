@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Sun, Moon, Rocket, Menu, X } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
+import { getNavigationConfig, getPersonalInfo } from "../utils/portfolio-data";
 
 interface NavigationProps {
   darkMode: boolean;
@@ -19,7 +20,10 @@ export default function Navigation({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const sections = ["hero", "projects", "contact"];
+  // Get navigation and personal info from centralized data
+  const navigationConfig = getNavigationConfig();
+  const personalInfo = getPersonalInfo();
+  const sections = navigationConfig.sections;
 
   // Scroll detection
   useEffect(() => {
@@ -54,14 +58,14 @@ export default function Navigation({
           className="flex items-center gap-3 md:gap-4"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+          <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br ${navigationConfig.logo.gradient} flex items-center justify-center`}>
             <Rocket className="w-5 h-5 md:w-6 md:h-6 text-white" />
           </div>
           <div className="hidden sm:block">
             <div className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Rahul Goswami
+              {personalInfo.name}
             </div>
-            <div className="text-xs text-gray-400">Full-Stack Engineer</div>
+            <div className="text-xs text-gray-400">{personalInfo.title}</div>
           </div>
         </motion.div>
 

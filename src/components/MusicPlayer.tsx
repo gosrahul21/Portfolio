@@ -60,7 +60,6 @@ export default function MusicPlayer({ isVisible }: MusicPlayerProps) {
 
   const togglePlay = () => {
     if (audioRef.current) {
-
       setIsPlaying(!isPlaying);
     }
   };

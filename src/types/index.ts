@@ -13,3 +13,6 @@ export interface Skill {
   level: number;
   color: string;
 }
+
+// Export portfolio data types
+export * from './portfolio-data';

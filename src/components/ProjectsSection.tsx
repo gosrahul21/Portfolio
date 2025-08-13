@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import { getProjectsSection } from "../utils/portfolio-data";
 
 interface Project {
   title: string;
@@ -24,6 +25,9 @@ export default function ProjectsSection({
   onProjectHover,
   onProjectLeave,
 }: ProjectsSectionProps) {
+  // Get projects section data from centralized source
+  const projectsData = getProjectsSection();
+
   return (
     <section
       ref={projectsRef}
@@ -42,11 +46,10 @@ export default function ProjectsSection({
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Featured Creations
+            {projectsData.title}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4 leading-relaxed">
-            A showcase of innovative projects that demonstrate the future of web
-            technology
+            {projectsData.subtitle}
           </p>
         </motion.div>
 

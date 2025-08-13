@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getSkillsSection } from "../utils/portfolio-data";
 
 interface Skill {
   name: string;
@@ -11,6 +12,9 @@ interface SkillsSectionProps {
 }
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
+  // Get skills section data from centralized source
+  const skillsData = getSkillsSection();
+
   return (
     <section className="py-16 md:py-20 px-4 md:px-8 relative">
       <div className="max-w-6xl mx-auto">
@@ -21,11 +25,10 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Technical Arsenal
+            {skillsData.title}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Mastery of cutting-edge technologies that power the future of web
-            development
+            {skillsData.subtitle}
           </p>
         </motion.div>
 

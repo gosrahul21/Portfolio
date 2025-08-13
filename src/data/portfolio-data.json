@@ -1,0 +1,226 @@
+{
+  "personal": {
+    "name": "Rahul Goswami",
+    "title": "Full-Stack Engineer",
+    "tagline": "Building Tomorrow Today",
+    "description": "I'm Rahul Goswami, a full-stack engineer crafting cutting-edge applications that push the boundaries of what's possible on the web. From AI-powered platforms to blockchain solutions, I build experiences that feel like magic.",
+    "welcomeMessage": "Welcome to the future",
+    "cvDownloadUrl": "#",
+    "avatar": "https://media.licdn.com/dms/image/v2/D5603AQEp0qYO3TmsXw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714213494465?e=1758153600&v=beta&t=ATrUhJ_8eRVzmQjseS3EfBTX-iwtBE0COlA6b8_B5YI"
+  },
+      "navigation": {
+      "sections": ["hero", "projects", "contact"],
+    "logo": {
+      "icon": "Rocket",
+      "gradient": "from-blue-500 to-purple-600"
+    }
+  },
+  "hero": {
+    "mainHeading": {
+      "line1": "Building",
+      "line2": "Tomorrow",
+      "line3": "Today"
+    },
+    "gradients": {
+      "line1": "from-blue-400 via-purple-400 to-pink-400",
+      "line2": "text-white",
+      "line3": "from-green-400 via-blue-400 to-purple-400"
+    },
+    "ctaButtons": {
+      "primary": {
+        "text": "Explore My Work",
+        "action": "scroll",
+        "target": "projects"
+      },
+      "secondary": {
+        "text": "Download CV",
+        "action": "download",
+        "icon": "Download"
+      }
+    },
+    "stats": [
+      {
+        "number": "50+",
+        "label": "Projects Completed"
+      },
+      {
+        "number": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "number": "100%",
+        "label": "Client Satisfaction"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technical Arsenal",
+    "subtitle": "Mastery of cutting-edge technologies that power the future of web development",
+    "list": [
+      {
+        "name": "React",
+        "level": 95,
+        "color": "#61dafb"
+      },
+      {
+        "name": "TypeScript",
+        "level": 90,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Node.js",
+        "level": 88,
+        "color": "#339933"
+      },
+      {
+        "name": "Three.js",
+        "level": 85,
+        "color": "#000000"
+      },
+      {
+        "name": "Solidity",
+        "level": 82,
+        "color": "#363636"
+      },
+      {
+        "name": "Python",
+        "level": 80,
+        "color": "#3776ab"
+      },
+      {
+        "name": "AWS",
+        "level": 78,
+        "color": "#ff9900"
+      },
+      {
+        "name": "Docker",
+        "level": 75,
+        "color": "#2496ed"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A showcase of my latest work and innovations",
+    "list": [
+      {
+        "title": "AI-Powered Trading Platform",
+        "description": "A real-time, low-latency trading interface with AI strategy recommendations and live P/L tracking.",
+        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["React", "WebSockets", "Node.js", "TensorFlow", "AI"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": true
+      },
+      {
+        "title": "Blockchain Asset Manager",
+        "description": "Multi-chain wallet creation, transaction scanning, and private key security with event-driven architecture.",
+        "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Solidity", "Kafka", "MongoDB", "Web3", "Blockchain"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": true
+      },
+      {
+        "title": "Hydrogen Supply Chain (NFT-Based)",
+        "description": "On-chain Merkle-proof supply chain tracking with NFT state tokens for transparency.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["React", "Web3.js", "Ethereum", "IPFS", "Web3"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "title": "Neural Network Visualizer",
+        "description": "Interactive 3D visualization of neural networks with real-time training visualization.",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Three.js", "React", "Python", "TensorFlow", "3D", "AI"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "title": "Quantum Computing Simulator",
+        "description": "Web-based quantum circuit simulator with drag-and-drop interface and real-time measurements.",
+        "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["WebGL", "React", "Quantum.js", "TypeScript", "3D"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "title": "Metaverse Social Platform",
+        "description": "3D virtual world with real-time collaboration, NFT marketplace, and social features.",
+        "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Three.js", "WebRTC", "Solidity", "Node.js", "Web3", "3D"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Build Something Amazing",
+    "subtitle": "Ready to turn your vision into reality? Let's collaborate and create something that will blow minds.",
+    "ctaButtons": {
+      "primary": {
+        "text": "Get In Touch",
+        "action": "email",
+        "email": "gosrahul21@gmail.com",
+        "icon": "Mail"
+      },
+      "secondary": {
+        "text": "GitHub",
+        "action": "link",
+        "url": "https://github.com/gosrahul21",
+        "icon": "Github"
+      }
+    },
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/rahul-goswami-56800717b/",
+        "icon": "Linkedin",
+        "label": "LinkedIn"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/gosrahul21",
+        "icon": "Github",
+        "label": "GitHub"
+      },
+      {
+        "platform": "Email",
+        "url": "mailto:gosrahul21@gmail.com",
+        "icon": "Mail",
+        "label": "Email"
+      }
+    ]
+  },
+  "theme": {
+    "colors": {
+      "primary": {
+        "blue": "#3b82f6",
+        "purple": "#8b5cf6",
+        "pink": "#ec4899",
+        "green": "#10b981"
+      },
+      "gradients": {
+        "hero": "from-blue-400 via-purple-400 to-pink-400",
+        "cta": "from-blue-500 to-purple-600",
+        "text": "from-blue-400 to-purple-400"
+      }
+    },
+    "defaults": {
+      "threeEnabled": true,
+      "motionIntensity": 1,
+      "darkMode": true
+    }
+  },
+  "seo": {
+    "title": "Rahul Goswami - Full-Stack Engineer Portfolio",
+    "description": "Full-stack engineer crafting cutting-edge applications with AI, blockchain, and 3D technologies",
+    "keywords": ["full-stack", "engineer", "AI", "blockchain", "React", "TypeScript", "Three.js", "portfolio"],
+    "author": "Rahul Goswami"
+  }
+} 
