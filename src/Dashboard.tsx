@@ -10,6 +10,7 @@ import CalendlySection from "./components/CalendlySection";
 import ContactSection from "./components/ContactSection";
 import ThemeControls from "./components/ThemeControls";
 import Footer from "./components/Footer";
+import MusicPlayer from "./components/MusicPlayer";
 import type { Project, Skill } from "./types";
 
 export default function CoolestPortfolio() {
@@ -221,14 +222,17 @@ export default function CoolestPortfolio() {
 
       <ContactSection contactRef={contactRef} />
 
-      <ThemeControls
+      {/* <ThemeControls
         threeEnabled={threeEnabled}
         setThreeEnabled={setThreeEnabled}
         motionIntensity={motionIntensity}
         setMotionIntensity={setMotionIntensity}
-      />
+      /> */}
 
       <Footer />
+
+      {/* Music Player */}
+      <MusicPlayer isVisible={true} />
     </div>
   );
 }
