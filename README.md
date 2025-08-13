@@ -279,10 +279,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Portfolio**: [Your Portfolio URL]
-- **LinkedIn**: [Your LinkedIn]
-- **GitHub**: [Your GitHub]
-- **Email**: [Your Email]
+- **Portfolio**: 
+- **LinkedIn**: https://www.linkedin.com/in/rahul-goswami-56800717b/
+- **GitHub**: https://github.com/gosrahul21
+- **Email**: gosrahul21@gmail.com
 
 ---
 
