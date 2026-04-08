@@ -4,6 +4,9 @@ export interface PortfolioData {
   hero: HeroSection;
   skills: SkillsSection;
   projects: ProjectsSection;
+  experience: ExperienceSection;
+  achievements: AchievementsSection;
+  education: EducationSection;
   contact: ContactSection;
   theme: ThemeConfig;
   seo: SEOConfig;
@@ -77,6 +80,8 @@ export interface ProjectsSection {
   list: Project[];
 }
 
+export type ProjectCategory = 'Company' | 'Freelance' | 'SAAS';
+
 export interface Project {
   title: string;
   description: string;
@@ -85,11 +90,13 @@ export interface Project {
   liveUrl: string;
   githubUrl: string;
   featured: boolean;
+  category: ProjectCategory;
 }
 
 export interface ContactSection {
   title: string;
   subtitle: string;
+  web3formsKey?: string;
   ctaButtons: {
     primary: CTAButton;
     secondary: CTAButton;
@@ -130,4 +137,46 @@ export interface SEOConfig {
   description: string;
   keywords: string[];
   author: string;
-} 
+}
+
+export interface ExperienceSection {
+  title: string;
+  subtitle: string;
+  list: Experience[];
+}
+
+export interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  description: string[];
+  tech: string[];
+  logo?: string;
+}
+
+export interface Achievement {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export interface AchievementsSection {
+  title: string;
+  subtitle: string;
+  list: Achievement[];
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  year: string;
+  score: string;
+  location: string;
+}
+
+export interface EducationSection {
+  title: string;
+  subtitle: string;
+  list: Education[];
+}

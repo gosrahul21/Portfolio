@@ -30,7 +30,8 @@ function validatePortfolioData() {
     // Basic structure validation
     const requiredSections = [
       'personal', 'navigation', 'hero', 'skills', 
-      'projects', 'contact', 'theme', 'seo'
+      'projects', 'experience', 'achievements', 'education', 
+      'contact', 'theme', 'seo'
     ];
     
     for (const section of requiredSections) {

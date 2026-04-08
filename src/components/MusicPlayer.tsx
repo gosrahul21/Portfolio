@@ -19,7 +19,7 @@ export default function MusicPlayer({ isVisible, darkMode }: MusicPlayerProps) {
   const tracks = [
     {
       name: "Heart Of The Ocean",
-      url: "/src/assets/playlist/Heart-Of-The-Ocean.mp3",
+      url: "/assets/playlist/Heart-Of-The-Ocean.mp3",
       artist: "Chill Beats",
     },
     // Add more local tracks here as you add them to the playlist folder
@@ -67,7 +67,10 @@ export default function MusicPlayer({ isVisible, darkMode }: MusicPlayerProps) {
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current?.play();
+      audioRef.current?.play().catch((err) => {
+        console.warn("Playback prevented by browser:", err);
+        setIsPlaying(false);
+      });
     } else {
       audioRef.current?.pause();
     }
@@ -121,7 +124,7 @@ export default function MusicPlayer({ isVisible, darkMode }: MusicPlayerProps) {
         initial={{ opacity: 0, scale: 0.8, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.8, y: 20 }}
-        className="fixed bottom-6 right-6 z-50"
+        className="fixed bottom-6 left-6 z-50"
       >
         <motion.div
           className={`bg-black/80 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${

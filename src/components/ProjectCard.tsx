@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Star, ExternalLink, Github } from "lucide-react";
+import { Star, ExternalLink, Github, ArrowRight } from "lucide-react";
 import Tilt from "react-parallax-tilt";
+import Link from "next/link";
 
 interface Project {
   title: string;
@@ -10,6 +11,8 @@ interface Project {
   liveUrl: string;
   githubUrl: string;
   featured: boolean;
+  category?: string;
+  id?: string;
 }
 
 interface ProjectCardProps {
@@ -94,17 +97,17 @@ export default function ProjectCard({
             </motion.div>
           )}
 
-          <div className={`absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+          <div className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-500 opacity-100 ${
             darkMode 
-              ? "from-black/80 via-black/20 to-transparent" 
-              : "from-gray-900/80 via-gray-900/20 to-transparent"
+              ? "from-black/95 via-black/70 to-transparent" 
+              : "from-gray-900/95 via-gray-900/70 to-transparent"
           }`} />
 
-          <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3">
+          <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 text-white transition-opacity duration-500 opacity-100">
+            <h3 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 drop-shadow-md">
               {project.title}
             </h3>
-            <p className={`mb-3 md:mb-4 text-xs md:text-sm leading-relaxed transition-colors duration-300 ${
+            <p className={`mb-3 md:mb-4 text-xs md:text-sm font-medium leading-relaxed drop-shadow-sm line-clamp-2 ${
               darkMode ? "text-gray-300" : "text-gray-200"
             }`}>
               {project.description}
@@ -135,22 +138,37 @@ export default function ProjectCard({
             </div>
 
             <div className="flex gap-2 md:gap-3">
-              <a
-                href={project.liveUrl}
-                className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-medium text-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 hover:scale-105"
-              >
-                <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="hidden sm:inline">Live Demo</span>
-                <span className="sm:hidden">Demo</span>
-              </a>
-              <a
-                href={project.githubUrl}
-                className="flex-1 bg-white/10 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-medium text-center hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 hover:scale-105"
-              >
-                <Github className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="hidden sm:inline">Code</span>
-                <span className="sm:hidden">Code</span>
-              </a>
+              {project.liveUrl.startsWith("/") ? (
+                <Link
+                  href={project.liveUrl}
+                  className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-medium text-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 hover:scale-105"
+                >
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden sm:inline">Case Study</span>
+                  <span className="sm:hidden">Study</span>
+                </Link>
+              ) : project.category !== 'Company' ? (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-medium text-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 hover:scale-105"
+                >
+                  <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden sm:inline">Live Demo</span>
+                  <span className="sm:hidden">Demo</span>
+                </a>
+              ) : null}
+              {project.category === 'SAAS' && (
+                <a
+                  href={project.githubUrl}
+                  className="flex-1 bg-white/10 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-medium text-center hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 hover:scale-105"
+                >
+                  <Github className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden sm:inline">Code</span>
+                  <span className="sm:hidden">Code</span>
+                </a>
+              )}
             </div>
           </div>
         </div>

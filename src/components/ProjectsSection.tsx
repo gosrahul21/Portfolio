@@ -1,16 +1,8 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { getProjectsSection } from "../utils/portfolio-data";
-
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tech: string[];
-  liveUrl: string;
-  githubUrl: string;
-  featured: boolean;
-}
+import { FadeInUp, ScaleIn } from "./StaggeredReveal";
+import { Project, ProjectCategory } from "../types/portfolio-data";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -27,16 +19,15 @@ export default function ProjectsSection({
   onProjectLeave,
   darkMode,
 }: ProjectsSectionProps) {
-  // Get projects section data from centralized source
   const projectsData = getProjectsSection();
+  const categories: ProjectCategory[] = [ "SAAS","Company", "Freelance",];
 
   return (
     <section
       ref={projectsRef}
       id="projects"
-      className="py-16 md:py-20 px-4 md:px-8 relative"
+      className="py-16 md:py-24 px-4 md:px-8 relative"
     >
-      {/* Subtle background gradient */}
       <div className={`absolute inset-0 pointer-events-none transition-colors duration-300 ${
         darkMode 
           ? "bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5" 
@@ -44,50 +35,65 @@ export default function ProjectsSection({
       }`} />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <ScaleIn className="text-center mb-16 md:mb-24">
+          <motion.h2 
+            className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+          >
             {projectsData.title}
-          </h2>
-          <p className={`text-lg md:text-xl max-w-2xl mx-auto px-4 leading-relaxed transition-colors duration-300 ${
-            darkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
+          </motion.h2>
+          <motion.p 
+            className={`text-lg md:text-xl max-w-2xl mx-auto transition-colors duration-300 ${
+              darkMode ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             {projectsData.subtitle}
-          </p>
-        </motion.div>
+          </motion.p>
+        </ScaleIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: idx * 0.1,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -5,
-                transition: { duration: 0.3 },
-              }}
-            >
-              <ProjectCard
-                project={project}
-                index={idx}
-                onHover={onProjectHover}
-                onLeave={onProjectLeave}
-                darkMode={darkMode}
-              />
-            </motion.div>
-          ))}
-        </div>
+        {categories.map((category) => {
+          const categoryProjects = projects.filter((p) => p.category === category);
+          if (categoryProjects.length === 0) return null;
+
+          return (
+            <div key={category} className="mb-24 last:mb-0">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-6 mb-12"
+              >
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-500/30 to-blue-500/50" />
+                <h3 className={`text-2xl md:text-3xl font-bold whitespace-nowrap px-6 py-2 rounded-2xl border ${
+                  darkMode ? "bg-white/5 border-white/10" : "bg-white border-gray-200 shadow-sm"
+                }`}>
+                  {category} <span className="text-blue-500">Projects</span>
+                </h3>
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent via-blue-500/30 to-blue-500/50" />
+              </motion.div>
+
+              <FadeInUp 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+                staggerDelay={0.1}
+              >
+                {categoryProjects.map((project, idx) => (
+                  <motion.div
+                    key={`${category}-${idx}`}
+                    whileHover={{ y: -10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <ProjectCard
+                      project={project}
+                      index={idx}
+                      onHover={onProjectHover}
+                      onLeave={onProjectLeave}
+                      darkMode={darkMode}
+                    />
+                  </motion.div>
+                ))}
+              </FadeInUp>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
