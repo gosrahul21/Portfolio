@@ -1,15 +1,15 @@
 {
   "personal": {
-    "name": "Rahul Goswami",
-    "title": "Full-Stack Engineer",
-    "tagline": "Building Tomorrow Today",
-    "description": "I'm Rahul Goswami, a full-stack engineer crafting cutting-edge applications that push the boundaries of what's possible on the web. From AI-powered platforms to blockchain solutions, I build experiences that feel like magic.",
-    "welcomeMessage": "Welcome to the future",
-    "cvDownloadUrl": "#",
+    "name": "Rahul Kumar",
+    "title": "Software Engineer",
+    "tagline": "Building Scalable AI & Full-Stack Solutions",
+    "description": "Software Engineer with a focus on building real-time applications, AI-driven platforms, and scalable backends. Experienced in Electron, React, Node.js, and Blockchain technologies.",
+    "welcomeMessage": "Welcome to my digital workspace",
+    "cvDownloadUrl": "https://docs.google.com/document/d/e/2PACX-1vSbGmg9g-YKoS4wUu3vGrukGhvV_N5gbiJan-zt23GDmdjWagRnemNXVyXYr08fOw/pub",
     "avatar": "https://media.licdn.com/dms/image/v2/D5603AQEp0qYO3TmsXw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714213494465?e=1758153600&v=beta&t=ATrUhJ_8eRVzmQjseS3EfBTX-iwtBE0COlA6b8_B5YI"
   },
-      "navigation": {
-      "sections": ["hero", "projects", "contact"],
+  "navigation": {
+    "sections": ["hero", "skills", "experience", "projects", "achievements", "education", "contact"],
     "logo": {
       "icon": "Rocket",
       "gradient": "from-blue-500 to-purple-600"
@@ -18,8 +18,8 @@
   "hero": {
     "mainHeading": {
       "line1": "Building",
-      "line2": "Tomorrow",
-      "line3": "Today"
+      "line2": "Intelligent",
+      "line3": "Solutions"
     },
     "gradients": {
       "line1": "from-blue-400 via-purple-400 to-pink-400",
@@ -40,128 +40,222 @@
     },
     "stats": [
       {
-        "number": "50+",
-        "label": "Projects Completed"
-      },
-      {
-        "number": "5+",
+        "number": "4.5+",
         "label": "Years Experience"
       },
       {
-        "number": "100%",
-        "label": "Client Satisfaction"
+        "number": "20+",
+        "label": "Projects Delivered"
+      },
+      {
+        "number": "10+",
+        "label": "Clout Ranks"
       }
     ]
   },
   "skills": {
-    "title": "Technical Arsenal",
-    "subtitle": "Mastery of cutting-edge technologies that power the future of web development",
+    "title": "Technical Skillset",
+    "subtitle": "A comprehensive toolkit for modern software engineering and AI integration",
     "list": [
-      {
-        "name": "React",
-        "level": 95,
-        "color": "#61dafb"
-      },
-      {
-        "name": "TypeScript",
-        "level": 90,
-        "color": "#3178c6"
-      },
-      {
-        "name": "Node.js",
-        "level": 88,
-        "color": "#339933"
-      },
-      {
-        "name": "Three.js",
-        "level": 85,
-        "color": "#000000"
-      },
-      {
-        "name": "Solidity",
-        "level": 82,
-        "color": "#363636"
-      },
-      {
-        "name": "Python",
-        "level": 80,
-        "color": "#3776ab"
-      },
-      {
-        "name": "AWS",
-        "level": 78,
-        "color": "#ff9900"
-      },
-      {
-        "name": "Docker",
-        "level": 75,
-        "color": "#2496ed"
-      }
+      { "name": "TypeScript", "level": 90, "color": "#3178c6" },
+      { "name": "JavaScript", "level": 95, "color": "#f7df1e" },
+      { "name": "Node.js", "level": 88, "color": "#339933" },
+      { "name": "ReactJs", "level": 92, "color": "#61dafb" },
+      { "name": "NestJS", "level": 85, "color": "#e0234e" },
+      { "name": "ElectronJs", "level": 80, "color": "#47848f" },
+      { "name": "MongoDB", "level": 85, "color": "#47a248" },
+      { "name": "PostgreSQL", "level": 82, "color": "#336791" },
+      { "name": "Docker", "level": 75, "color": "#2496ed" },
+      { "name": "n8n", "level": 85, "color": "#ff6d5b" }
     ]
   },
   "projects": {
-    "title": "Featured Projects",
-    "subtitle": "A showcase of my latest work and innovations",
+    "title": "Featured Innovations",
+    "subtitle": "Architecting high-performance systems and AI platforms",
     "list": [
       {
-        "title": "AI-Powered Trading Platform",
-        "description": "A real-time, low-latency trading interface with AI strategy recommendations and live P/L tracking.",
-        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1400&q=80",
-        "tech": ["React", "WebSockets", "Node.js", "TensorFlow", "AI"],
-        "liveUrl": "#",
+        "id": "echo-ai",
+        "title": "EchoAI (GustoAI Concierge)",
+        "description": "A real-time voice-to-voice AI platform built for zero-latency interactions. Features advanced voice activity detection (VAD), neural speech synthesis, and smart interruption handling for natural human-AI dialogue.",
+        "image": "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["WebSockets", "Web Audio API", "Node.js", "Deepgram", "React 19"],
+        "liveUrl": "/projects/echo-ai",
         "githubUrl": "#",
-        "featured": true
+        "featured": true,
+        "category": "SAAS"
       },
       {
-        "title": "Blockchain Asset Manager",
-        "description": "Multi-chain wallet creation, transaction scanning, and private key security with event-driven architecture.",
+        "id": "follow-ai",
+        "title": "CloseFlow AI (Follow-AI)",
+        "description": "Multi-tenant B2B SaaS platform automating lead follow-ups via Vapi.ai and Deepgram, secured with Supabase RLS and geo-routed billing.",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Next.js", "Supabase", "Vapi.ai", "Stripe", "Framer Motion"],
+        "liveUrl": "/projects/follow-ai",
+        "githubUrl": "https://github.com/gosrahul21/mvp-truemindlab",
+        "featured": true,
+        "category": "SAAS"
+      },
+      {
+        "id": "chat-agent",
+        "title": "Embeddable AI Chat Agent",
+        "description": "Built a lightweight, highly customizable AI chat agent widget designed to be easily integrable into any external website via a simple script tag for context-aware support.",
+        "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["AI", "Widget", "JavaScript", "Automation"],
+        "liveUrl": "#",
+        "githubUrl": "https://github.com/gosrahul21/agent_engine",
+        "featured": false,
+        "category": "SAAS"
+      },
+      {
+        "id": "risk-reducer",
+        "title": "Risk Reducer Trading Platform",
+        "description": "True Full-Stack algorithmic trading platform with custom Dynamic Strength Scoring and automated Stop-Loss execution via Binance/CoinDCX integrations.",
+        "image": "https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Node.js", "React 18", "TypeScript", "WebSockets", "MongoDB"],
+        "liveUrl": "/projects/risk-reducer",
+        "githubUrl": "https://github.com/gosrahul21/risk-reducer",
+        "featured": true,
+        "category": "SAAS"
+      },
+      {
+        "id": "omet",
+        "title": "Institutional Trading Platform (OMET)",
+        "description": "Engineered a high-performance, real-time institutional trading desktop application from scratch. Architected multi-window IPC, state management, and real-time WebSocket data pipelines.",
+        "image": "https://images.unsplash.com/photo-1611974714451-f25f18968943?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Electron", "React", "TypeScript", "Redux Toolkit", "WebSockets"],
+        "liveUrl": "/projects/omet",
+        "githubUrl": "#",
+        "featured": true,
+        "category": "Company"
+      },
+      {
+        "id": "crypto-gateway",
+        "title": "Crypto Asset Management Gateway/RAG",
+        "description": "Architected a robust microservices backend utilizing NestJS and GraphQL with advanced RAG (Retrieval-Augmented Generation) processing for secure wallet workflows.",
         "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1400&q=80",
-        "tech": ["Solidity", "Kafka", "MongoDB", "Web3", "Blockchain"],
+        "tech": ["NestJS", "GraphQL", "Apache Kafka", "RAG", "OAuth"],
         "liveUrl": "#",
-        "githubUrl": "#",
-        "featured": true
+        "githubUrl": "https://github.com/gosrahul21/Rag-proceess",
+        "featured": true,
+        "category": "Company"
       },
       {
-        "title": "Hydrogen Supply Chain (NFT-Based)",
-        "description": "On-chain Merkle-proof supply chain tracking with NFT state tokens for transparency.",
+        "title": "Automated Web3 Airdrop Ecosystem",
+        "description": "Built a dApp and automated pipeline for Solana-based token distribution featuring direct Phantom Wallet integration and custom scrapers for autonomous execution.",
+        "image": "https://images.unsplash.com/photo-1622633054716-a618ee29d492?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["React", "Solana", "Phantom Wallet", "Web3", "Automation"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false,
+        "category": "Company"
+      },
+      {
+        "id": "kigentech",
+        "title": "Kigentech — Digital Hydrogen Tracking",
+        "description": "Blockchain-powered B2B SaaS platform tokenizing green hydrogen supply chains on Polygon. Built full-stack: React frontend, NestJS engine, Solidity smart contracts, and Merkle Tree data integrity.",
         "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-        "tech": ["React", "Web3.js", "Ethereum", "IPFS", "Web3"],
+        "tech": ["React", "NestJS", "Solidity", "Web3.js", "MongoDB", "Polygon"],
+        "liveUrl": "/projects/kigentech",
+        "githubUrl": "#",
+        "featured": true,
+        "category": "Company"
+      },
+
+      {
+        "title": "Cryptocase: Gamified Investment",
+        "description": "Designed the architecture for a unique investment platform blending finance with gamification. Built custom background workers for real-time leaderboard generation and performance tracking.",
+        "image": "https://images.unsplash.com/photo-1640344583441-7398813945a6?auto=format&fit=crop&w=1400&q=80",
+        "tech": ["Node.js", "NestJS", "TypeScript", "Firebase", "Redis"],
         "liveUrl": "#",
         "githubUrl": "#",
-        "featured": false
+        "featured": true,
+        "category": "Freelance"
       },
       {
-        "title": "Neural Network Visualizer",
-        "description": "Interactive 3D visualization of neural networks with real-time training visualization.",
-        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
-        "tech": ["Three.js", "React", "Python", "TensorFlow", "3D", "AI"],
-        "liveUrl": "#",
+        "id": "lark-finserv",
+        "title": "Larkfinserv Fintech SDK",
+        "description": "Created a plug-and-play frontend SDK to streamline complex financial onboarding. Featured cross-origin communication and live MFCentral API integration.",
+        "image": "/assets/images/larkfinserv.png",
+        "tech": ["TypeScript", "React 19", "Vite", "Tailwind CSS"],
+        "liveUrl": "/projects/lark-finserv",
         "githubUrl": "#",
-        "featured": false
+        "featured": false,
+        "category": "Freelance"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Professional Path",
+    "subtitle": "Building impactful software at leading technology firms",
+    "list": [
+      {
+        "company": "Vegavid Technology",
+        "role": "Software Engineer",
+        "period": "July 2022 – Jan 2025",
+        "location": "Noida, India",
+        "description": [
+          "Built a real-time trading desktop application using Electron and React, implementing IPC-based communication.",
+          "Optimized state handling for high-frequency market data updates, improving performance.",
+          "Designed and developed core modules (Launcher, Responder, Upsize, Blotter) for low-latency execution.",
+          "Led task planning, sprint coordination, and mentored teammates through structured KT sessions.",
+          "Integrated multichain support (BSC, Polygon, Solana, Tron) and developed Kafka-based blockchain listeners.",
+          "Integrated ChatGPT-4o for AI content generation and media moderation."
+        ],
+        "tech": ["Electron", "React", "Node.js", "Kafka", "GraphQL", "Blockchain"],
+        "logo": "https://raw.githubusercontent.com/gosrahul21/Portfolio/main/src/assets/company/vegavid.png"
       },
       {
-        "title": "Quantum Computing Simulator",
-        "description": "Web-based quantum circuit simulator with drag-and-drop interface and real-time measurements.",
-        "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1400&q=80",
-        "tech": ["WebGL", "React", "Quantum.js", "TypeScript", "3D"],
-        "liveUrl": "#",
-        "githubUrl": "#",
-        "featured": false
+        "company": "Accenture",
+        "role": "Application Development Associate",
+        "period": "August 2021 – June 2022",
+        "location": "Pune, India",
+        "description": [
+          "Developed REST APIs using Express.js with PostgreSQL for enterprise-grade solutions.",
+          "Built authentication, user roles, and notification modules with secure protocols.",
+          "Deployed services on AWS using PM2 and managed cloud storage with S3.",
+          "Collaborated in Agile sprints and documented APIs using Swagger."
+        ],
+        "tech": ["Express.js", "PostgreSQL", "AWS", "Agile", "REST"],
+        "logo": "https://raw.githubusercontent.com/gosrahul21/Portfolio/main/src/assets/company/accenture.png"
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Awards & Recognition",
+    "subtitle": "Celebrating milestones in engineering and competitive programming",
+    "list": [
+      {
+        "title": "Employee of the Quarter",
+        "description": "Awarded at Vegavid Technology for outstanding performance, ownership, and impactful contributions.",
+        "link":""
       },
       {
-        "title": "Metaverse Social Platform",
-        "description": "3D virtual world with real-time collaboration, NFT marketplace, and social features.",
-        "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1400&q=80",
-        "tech": ["Three.js", "WebRTC", "Solidity", "Node.js", "Web3", "3D"],
-        "liveUrl": "#",
-        "githubUrl": "#",
-        "featured": false
+        "title": "TCS CodeVita Global Rank 327",
+        "description": "Achieved Round-2 Global Rank 327 (Top 0.2%) among 1.5 lakh+ participants."
+      },
+      {
+        "title": "Generative AI Certification",
+        "description": "Completed Generative AI with Python on Udemy, gaining hands-on experience in LLM workflows."
+      }
+    ]
+  },
+  "education": {
+    "title": "Educational Foundation",
+    "subtitle": "Strong academic background in Information Technology",
+    "list": [
+      {
+        "degree": "B.Tech in Information Technology",
+        "institution": "Maulana Abul Kalam Azad University of Technology",
+        "year": "2017 – 2021",
+        "score": "8.63 CGPA",
+        "location": "West Bengal, India"
       }
     ]
   },
   "contact": {
     "title": "Let's Build Something Amazing",
     "subtitle": "Ready to turn your vision into reality? Let's collaborate and create something that will blow minds.",
+    "web3formsKey": "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
     "ctaButtons": {
       "primary": {
         "text": "Get In Touch",
@@ -188,6 +282,12 @@
         "url": "https://github.com/gosrahul21",
         "icon": "Github",
         "label": "GitHub"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://x.com/gosrahul22",
+        "icon": "Twitter",
+        "label": "Twitter"
       },
       {
         "platform": "Email",
@@ -218,9 +318,9 @@
     }
   },
   "seo": {
-    "title": "Rahul Goswami - Full-Stack Engineer Portfolio",
-    "description": "Full-stack engineer crafting cutting-edge applications with AI, blockchain, and 3D technologies",
-    "keywords": ["full-stack", "engineer", "AI", "blockchain", "React", "TypeScript", "Three.js", "portfolio"],
-    "author": "Rahul Goswami"
+    "title": "Rahul Kumar - Software Engineer Portfolio",
+    "description": "Software engineer specializing in AI, scalability, and full-stack development",
+    "keywords": ["Software Engineer", "AI", "Node.js", "React", "Electron", "Blockchain"],
+    "author": "Rahul Kumar"
   }
-} 
+}
